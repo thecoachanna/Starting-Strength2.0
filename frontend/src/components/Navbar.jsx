@@ -1,16 +1,51 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import LogoW from "../assets/LogoW.png";
 
 const Navbar = () => {
-  return (
-    <header>
-          <div className="container">
-            <Link to="/workouts/home">Starting Strength</Link>
-            <Link to="workouts/trainingtips">Training Tips</Link>
-            <Link to="workouts/new">Create Workout</Link>
-          </div>
-    </header>
-  )
-}
+  const [nav, setNav] = useState(false)
+  const handleClick = () => setNav(!nav)
 
-export default Navbar
+  return (
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#2B2B46] text-[#f4f4f4]">
+      <div>
+        <img src={LogoW} alt="CoachAnnaLogo" style={{ width: "45px" }} />
+      </div>
+      <div>
+      <ul className='hidden md:flex'>
+                <li>
+                    <a href="/workouts/home">Home</a>
+                    </li>
+                <li>
+                    <a href="/workouts/tips">Training Tips</a>
+                    </li>
+                <li>
+                    <a href="/workouts/new">Create Workout</a>
+                    </li>            
+        </ul>
+        {/* Hamburger */}
+        <div onClick={handleClick} className='md:hidden z-10'>
+                {!nav ? <FaBars /> : <FaTimes />}
+            </div>
+
+            {/* mobile menu */}
+            <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#2b2b46] flex flex-col justify-center items-center'}>
+                <li className='py-6 text-4xl'>
+                    <a href="/workouts/home">Home</a>
+                </li>
+                <li className='py-6 text-4xl'>
+                    <a href="/workouts/tips">Training Tips</a>
+                </li>
+                <li className='py-6 text-4xl'>
+                    <a href="/workouts/new">Create Workout</a>
+                </li>
+                
+            </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
+
+

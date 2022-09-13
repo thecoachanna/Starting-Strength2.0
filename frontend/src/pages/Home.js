@@ -14,7 +14,7 @@ const Home = ({ exercises }) => {
   }, [])
 
     return (
-      <div>
+      <div className='bg-[#f4f4f4]'>
         <Workout workouts={ workout } />
       </div>
     )
