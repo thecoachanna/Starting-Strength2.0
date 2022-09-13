@@ -27,7 +27,7 @@ function App() {
             <Routes>
               <Route path='workouts/home' element={<Home exercises={exercises} />} />
               <Route path='workouts/new' element={ <NewWorkout exercises={exercises}/>} />
-              <Route path='workouts/trainingtips' element={ <TrainingTips />} />
+              <Route path='workouts/tips' element={ <TrainingTips />} />
             </Routes>
       
     </div>
