@@ -1,15 +1,18 @@
 require('dotenv').config();
 require('./db/connection')
 
+const PORT = 4000
 const express = require('express')
 const app = express()
-const PORT = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const cookieSession = require("cookie-session");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 const passportSetup = require("./passport");
 const passport = require("passport");
-const User = require('./models/User');
+const bcrypt = require('bcryptjs')
+
 
 const authRoutes = require("./routes/authRoutes");
 const workoutRoutes = require('./routes/workoutRoutes');
@@ -24,13 +27,22 @@ app.use(bodyParser.json())
 app.use(
     cookieSession({ name: "session", keys: ["anna"], maxAge: 24 * 60 * 60 * 100 })
   );
-  
+
+app.use(
+    session({
+      secret: "secretcode",
+      resave: true,
+      saveUninitialized: true,
+    })
+  );
+app.use(cookieParser("secretcode")); 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(
-    cors({
-      origin: "http://localhost:3000",
+  cors({
+      // React app
+      origin: "http://localhost:3000", 
       methods: "GET,POST,PUT,DELETE",
       credentials: true,
     })
@@ -45,10 +57,6 @@ app.use((req, res, next) => {
 app.use('/workouts', workoutRoutes)
 app.use("/auth", authRoutes);
 // app.use('/user', userRoutes)
-
-// app.get('/', (req, res) => {
-//     res.json('Welcome to Starting Strength!')
-// })
 
 
 app.listen(PORT, ()=> {

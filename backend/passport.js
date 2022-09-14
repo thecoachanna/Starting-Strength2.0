@@ -3,11 +3,14 @@ require('./db/connection')
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const GithubStrategy = require("passport-github2").Strategy;
+const LocalStrategy = require("passport-local").Strategy
 const passport = require("passport");
-// const User = require('./models/User');
+const bcrypt = require("bcryptjs");
+const User = require('./models/User');
 
 // configuring Passport!
-passport.use(new GoogleStrategy({
+passport.use(
+  new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_SECRET,
     callbackURL: '/auth/google/callback'
@@ -31,11 +34,34 @@ passport.use(
     }
   )
 );
+
+
+passport.use(
+  new LocalStrategy((username, password, done) => {
+    User.findOne({ username: username }, (err, user) => {
+        if (err) throw err;
+        if (!user) return done(null, false);
+        bcrypt.compare(password, user.password, (err, result) => {
+          if (err) throw err;
+          if (result === true) {
+            return done(null, user);
+          } else {
+            return done(null, false);
+          }
+        });
+      });
+    })
+  );
   
-    passport.serializeUser((user, done) => {
-      done(null, user);
+    passport.serializeUser((user, cb) => {
+      cb(null, user.id);
     });
     
-    passport.deserializeUser((user, done) => {
-      done(null, user);
+    passport.deserializeUser((id, cb) => {
+      User.findOne({ _id: id }, (err, user) => {
+        const userInformation = {
+          username: user.username,
+        };
+        cb(err, userInformation);
+      });
     });
