@@ -5,6 +5,7 @@ const PORT = 4000
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser");
@@ -16,11 +17,12 @@ const bcrypt = require('bcryptjs')
 
 const authRoutes = require("./routes/authRoutes");
 const workoutRoutes = require('./routes/workoutRoutes');
-// const userRoutes = require('./routes/userRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 
 // Middleware
 app.use(cors())
+app.use(morgan('tiny'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -56,7 +58,7 @@ app.use((req, res, next) => {
 // Attaching all routes to app
 app.use('/workouts', workoutRoutes)
 app.use("/auth", authRoutes);
-// app.use('/user', userRoutes)
+app.use('/user', userRoutes)
 
 
 app.listen(PORT, ()=> {
