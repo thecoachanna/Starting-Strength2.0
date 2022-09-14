@@ -17,7 +17,7 @@ const Navbar = ({ user }) => {
       </div>
       <div>
         <ul className="hidden md:flex">
-          {/* <li>Welcome, </li> */}
+          {/* <li>Welcome, {user.displayName}</li> */}
           <li>
             <a href="/workouts">Workouts</a>
           </li>

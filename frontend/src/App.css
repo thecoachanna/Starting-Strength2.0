@@ -169,7 +169,7 @@
 .google{
   background-color: #df4930;
 }
-.facebook{
+.user{
   background-color: #507cc0;
 }
 .github{
@@ -182,8 +182,14 @@
   margin-right: 10px;
 }
 
-input{
-  width: 200px;
+.leftInput{
+  width: 150px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.rightInput{
+  width: 200x;
   padding: 15px 20px;
   margin-bottom: 20px;
 }
