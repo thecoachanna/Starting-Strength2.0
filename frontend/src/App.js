@@ -53,10 +53,10 @@ function App() {
       
       <Navbar user={user} />
             <Routes>
-              <Route path='workouts' element={<Home exercises={exercises} />} />
+              <Route path='/workouts' element={<Home exercises={exercises} />} />
               <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />          
-              <Route path='workouts/new' element={ <NewWorkout exercises={exercises}/>} />
-              <Route path='workouts/tips' element={ <TrainingTips />} />
+              <Route path='/workouts/new' element={ <NewWorkout exercises={exercises}/>} />
+              <Route path='/workouts/tips' element={ <TrainingTips />} />
             </Routes>
       
     </div>
