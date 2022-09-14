@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Workout from '../components/Workout'
+// import Card from '../components/Card'
 
 
 const Home = ({ exercises }) => {
@@ -14,7 +15,7 @@ const Home = ({ exercises }) => {
   }, [])
 
     return (
-      <div className='bg-[#f4f4f4]'>
+      <div className='home' >
         <Workout workouts={ workout } />
       </div>
     )
