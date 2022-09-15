@@ -233,7 +233,16 @@ const exercise = [
         video: 'https://www.youtube.com/embed/5Im7DNvfoLo',
         cues: '- arms go just above shoulder level - alternate reaching forward and lateral'        
     },
-   
+    {
+        name: 'Reverse Crunch',
+        video: 'https://www.youtube.com/embed/ZnA0IkXfaLE',
+        cues: '- Keep heels pulled in towards your butt - Knees into your chest - Squeeze a yoga block if you have it'        
+    },
+    {
+        name: 'Banded Around the World',
+        video: 'https://www.youtube.com/embed/QFJ9ccjpRpo',
+        cues: '- keep a gentle pull on a light resistance band - try to keep arms as straight as possible'        
+    },
 ]
 
 // new model exerciseGroup containing array of exercise id's for exercises saved, can make another group for week 1, 2. etc
