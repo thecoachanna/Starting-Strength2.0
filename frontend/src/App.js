@@ -6,7 +6,7 @@ import "./App.css"
 // pages + components
 import Home from './pages/Home';
 import Login from "./pages/Login";
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import TrainingTips from "./pages/TrainingTips";
 import NewWorkout from './pages/NewWorkout';
 // import Workout from './components/Workout'
@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App">
       
-      <Navbar user={user} />
+      {/* <Navbar user={user} /> */}
             <Routes>
               <Route path='/workouts' element={<Home exercises={exercises} />} />
               <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />          

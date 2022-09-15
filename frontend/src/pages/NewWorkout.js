@@ -42,7 +42,7 @@ const NewWorkout = ({ addWorkout, exercises }) => {
       })
       .then((res) => {
         setFormData(res.data);
-        navigate('/workouts/home', { replace: true })
+        navigate('/workouts', { replace: true })
       });
   };
 
