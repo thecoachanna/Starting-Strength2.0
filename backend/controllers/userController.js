@@ -1,9 +1,10 @@
 const User = require('../models/User')
 const bcrypt = require('bcryptjs')
+const salt = 10
 
 
 const userLogin = (req, res) => {
-    User.findOne({name:  req.body.name},  (err, user) => {
+    User.findOne({username:  req.body.username},  (err, user) => {
         if(err){
             res.status(400).json(err)
             return
@@ -27,9 +28,24 @@ const userLogin = (req, res) => {
     })
 }
 
+const userRegister = (req, res) => {
+    bcrypt.hash(req.body.password, salt, (err, hash) => {
+        User.create({ ...req.body, password:hash })
+        .then(userData => {
+        res.send(userData)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).send(err.msg)
+    })
+    })
+    
+}
+
 
 module.exports = {
-    userLogin
+    userLogin,
+    userRegister
 }
 
 
