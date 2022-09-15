@@ -15,18 +15,19 @@ const Navbar = ({ user }) => {
       <div>
         <img src={LogoW} alt="CoachAnnaLogo" style={{ width: "45px" }} />
       </div>
+      <div className="text-2xl">Starting Strength</div>
       <div>
         <ul className="hidden md:flex">
-          {/* <li>Welcome, {user.displayName}</li> */}
+           <li>
+            <a href="/workouts/home">Home</a>
+          </li>
           <li>
             <a href="/workouts">Workouts</a>
           </li>
           <li>
             <a href="/workouts/tips">Training Tips</a>
           </li>
-          <li>
-            <a href="/workouts/new">Create Workout</a>
-          </li>
+         
           <li onClick={logout}>
             Logout
           </li>
@@ -45,14 +46,14 @@ const Navbar = ({ user }) => {
           }
         >
           <li className="py-6 text-4xl">
+            <a href="/workouts/home">Home</a>
+          </li> 
+          <li className="py-6 text-4xl">
             <a href="/workouts">Workouts</a>
           </li>
           <li className="py-6 text-4xl">
             <a href="/workouts/tips">Training Tips</a>
-          </li>
-          <li className="py-6 text-4xl">
-            <a href="/workouts/new">Create Workout</a>
-          </li>
+          </li>        
         </ul>
       </div>
     </div>

@@ -102,6 +102,23 @@ const Tips = () => {
                   </ul>
                 </span>
               </details>
+              <details className="mb-4">
+                <summary className="font-semibold  bg-gray-200 rounded-md text-[#2B2B46] py-4 px-6">
+                  What is Progressive Overload and why is it important?
+                </summary>
+
+                <span>
+                  Progressive Overload is a principle of strength training that involves gradually increasing the intensity or difficulty of exercises over time. In order to continue to challenge the body and make adaptations. Ie: gain muscle + strength.
+                  <br></br>
+                  <br></br>
+                  4 ways to apply this principle are:
+                  <li>Increase resistance - weight used.</li>
+                  <li>Increase reps.</li>
+                  <li>Manipulate tempo - time under tension.</li>
+                  <li>Lengthen or shorten range of motion.</li>
+                </span>
+                
+              </details>
             </div>
             <div className="w-full lg:w-1/2 px-4 py-2">
               <details className="mb-4">
@@ -150,6 +167,18 @@ const Tips = () => {
                   <br></br>
                   <br></br>
                   <img src={Grips} alt="grip positions" />
+                </span>
+                
+              </details>
+              <details className="mb-4">
+                <summary className="font-semibold  bg-gray-200 rounded-md text-[#2B2B46] py-4 px-6">
+                  How much weight should you use?
+                </summary>
+
+                <span>
+                  As a general rule for strength training, you should choose the heaviest weight you can to complete the prescribed reps with good form.
+                  <br></br>        
+                 
                 </span>
                 
               </details>

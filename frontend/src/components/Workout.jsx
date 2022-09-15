@@ -25,7 +25,7 @@ const Workout = ({ workouts }) => {
                     allowfullscreen
                   ></iframe>
                   
-                    <p className="title">{exercise.exercise.name}</p>
+                    <p className="title text-lg font-weight:600">{exercise.exercise.name}</p>
                     <p className="desc">{exercise.exercise.cues}</p>
                     <p className="desc">Sets: {exercise.sets}</p>
                     <p className="desc">Reps: {exercise.reps}</p>
