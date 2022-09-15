@@ -243,11 +243,28 @@ const exercise = [
         video: 'https://www.youtube.com/embed/QFJ9ccjpRpo',
         cues: '- keep a gentle pull on a light resistance band - try to keep arms as straight as possible'        
     },
-]
+    {
+        name: 'Worlds Greatest',
+        video: 'https://www.youtube.com/embed/2K9Zzul6Nfc',
+        cues: '- actively reach arm towards the ceiling'        
+    },
+    {
+        name: 'Adductor Rockback w/ Hip Extension',
+        video: 'https://www.youtube.com/embed/s0D5fKct3so',
+        cues: '- back stays flat as you hinge back into hips - hips stack underneath you as you become upright'        
+    },
+    {
+        name: 'Squat to Stand',
+        video: 'https://www.youtube.com/embed/_Munpoy_lnw',
+        cues: '- full inhale into upper back at the top - full exhale at the bottom'        
+    },
+    {
+        name: 'Cat/Cow',
+        video: 'https://www.youtube.com/embed/sHmNSIIemaE',
+        cues: '- inhale as you round through spine and low back - exhale as you extend'        
+    },
 
-// new model exerciseGroup containing array of exercise id's for exercises saved, can make another group for week 1, 2. etc
-// nested relationship is one way, save id's inside of group and what they correspond to in the database
-// create form with dropdown to collect id's
+]
 
 Exercise.deleteMany({})
     .then(() => {

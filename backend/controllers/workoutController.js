@@ -55,11 +55,22 @@ const getWorkout = (req, res) => {
     })
 }
 
+const deleteWorkout = (req, res) => {
+    let { id } = req.params
+    Workout.findByIdAndDelete(id, err, deleteWorkout)
+        if (err) {
+            res.status(400).json(err)
+            return
+        }
+    res.json(deleteWorkout)
+}
+
 module.exports = {
     
     index,
     getOneExercise,
     getWorkout,
-    createWorkout
+    createWorkout,
+    deleteWorkout
     
 }

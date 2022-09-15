@@ -12,5 +12,6 @@ router.post('/', workoutController.createWorkout)
 // GET a single exercise
 router.get('/:id', workoutController.getOneExercise)
 
+router.delete('/:id', workoutController.deleteWorkout)
 
 module.exports = router;
