@@ -17,30 +17,30 @@ function App() {
   const [user, setUser] = useState(null);
   const [workout, setWorkout] = useState([])
 
-  useEffect(() => {
-    const getUser = () => {
-      fetch("http://localhost:4000/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has failed!");
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   const getUser = () => {
+  //     fetch("http://localhost:4000/auth/login/success", {
+  //       method: "GET",
+  //       credentials: "include",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Credentials": true,
+  //       },
+  //     })
+  //       .then((response) => {
+  //         if (response.status === 200) return response.json();
+  //         throw new Error("authentication has failed!");
+  //       })
+  //       .then((resObject) => {
+  //         setUser(resObject.user);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   };
+  //   getUser();
+  // }, []);
   
   useEffect(() => {
     fetch('http://localhost:4000/workouts/')
@@ -62,7 +62,7 @@ function App() {
       <Routes>
               <Route path='/workouts/home' element={<Home />} />
               <Route path='/workouts' element={<Workouts workouts={workout} />} />
-              <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />          
+        <Route path="/login" element={user ? <Navigate to="/" /> : <Login setUser={setUser} />} />          
               <Route path='/workouts/new' element={ <NewWorkout exercises={exercises}/>} />
               <Route path='/workouts/tips' element={ <TrainingTips />} />
             </Routes>

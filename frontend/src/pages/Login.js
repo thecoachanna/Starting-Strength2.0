@@ -14,16 +14,43 @@ const Login = ({setUser}) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:4000/user/login', formData)
-        .then(res => {
-            console.log(res)
-            if(res.status === 200){
-                setUser(res.data)
-                navigate('/workouts/home')
-            }
-        })
+      e.preventDefault()
+      const fData = new FormData (e.target)
+      axios.post('http://localhost:4000/user/login', {
+        username: fData.get("username"),
+        password: fData.get("password")
+      })
+      .then(res => {
+          console.log(res)
+          
+              setUser(res.data)
+              navigate('/workouts/home')
+          
+      })
+        .catch(err => {
+        alert(err.message)
+      })
+        
     }
+  
+    const handleRegister = (e) => {
+      e.preventDefault()
+      const fData = new FormData (e.target)
+      axios.post('http://localhost:4000/user/register', {
+        username: fData.get("username"),
+        password: fData.get("password")
+      })
+      .then(res => {
+          console.log(res)
+          
+              setUser(res.data)
+              navigate('/workouts/home')
+          
+      })
+        .catch(err => {
+        alert(err.message)
+      })
+  }
 
 
   const google = () => {
@@ -41,10 +68,12 @@ const Login = ({setUser}) => {
       <div className="wrapper">
         <div className="left">
           
-          <div className="left">
-            <input className="leftInput" type="text" placeholder="Username" onChange={handleChange}/>
-            <input className="leftInput" type="text" placeholder="Password" onChange={handleChange}/>
-            <button className="loginButton user" onSubmit={handleSubmit}>Login</button>
+            <div className="left">
+              <form onSubmit={handleSubmit}>
+            <input className="leftInput" type="text" name="username" placeholder="Username" onChange={handleChange}/>
+            <input className="leftInput" type="password" name="password" placeholder="Password" onChange={handleChange}/>
+                <button className="loginButton user" >Login</button>
+                </form>
             </div>
             <div className="loginButton google" onClick={google}>
             <img src={Google} alt="" className="icon" />
@@ -59,10 +88,12 @@ const Login = ({setUser}) => {
           <div className="line" />
           <div className="or">OR</div>
         </div>
-        <div className="right">
-          <input className="rightInput" type="text" placeholder="Username" />
-          <input className="rightInput" type="text" placeholder="Password" />
-          <button className="submit" >Register</button>
+          <div className="right">
+            <form onSubmit={handleRegister}>
+          <input className="rightInput" type="text" name="username" placeholder="Username" />
+          <input className="rightInput" type="password" name="password" placeholder="Password" />
+              <button className="submit" >Register</button>
+              </form>
         </div>
       </div>
       </div>
