@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import LoginPage from '../components/LoginPage';
 import Google from "../assets/google.png";
 import Github from "../assets/github.png";
 
@@ -62,7 +63,7 @@ const Login = ({setUser}) => {
   };
 
   return (
-    <div className="">
+    <div className="bg-[#F4F4F4]">
     <div className="login">
       <h1 className="loginTitle">Login OR Register</h1>
       <div className="wrapper">
@@ -97,6 +98,7 @@ const Login = ({setUser}) => {
         </div>
       </div>
       </div>
+      <LoginPage />
       </div>
   );
 };
