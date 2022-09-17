@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
-const mongoURI = process.env.DATABASE_URL
+const mongoURI = 'mongodb://localhost:27017/starting-strength'
+    
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,

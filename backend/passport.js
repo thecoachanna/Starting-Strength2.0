@@ -4,6 +4,7 @@ require("./db/connection");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const GithubStrategy = require("passport-github2").Strategy;
 const passport = require("passport");
+const bcrypt = require('bcryptjs')
 const User = require("./models/User");
 
 // configuring Passport!
