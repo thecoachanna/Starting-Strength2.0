@@ -11,7 +11,7 @@ const Navbar = ({ user }) => {
   };
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#2B2B46] text-[#f4f4f4]">
+    <div className="sticky w-full h-[80px] flex justify-between items-center px-4 bg-[#2B2B46] text-[#f4f4f4]">
       <div>
         <img src={LogoW} alt="CoachAnnaLogo" style={{ width: "45px" }} />
       </div>

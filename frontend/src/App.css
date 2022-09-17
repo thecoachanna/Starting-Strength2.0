@@ -1,42 +1,3 @@
-.navbar {
-  height: 50px;
-  background-color: rgba(102, 16, 83, 0.698);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.list {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-.listItem {
-  margin-right: 20px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.home {
-  display: flex;
-  padding: 50px 100px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 
 .card {
   width: 30%;
@@ -111,13 +72,14 @@
 
 .wrapper {
   width: 60%;
-  height: 75%;
+  height: 450px;
   -webkit-box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
   box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
   display: flex;
   align-items: center;
   border-radius: 20px;
+  padding: 15px;
 }
 
 
@@ -125,7 +87,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
 }
 
 .center{
@@ -143,6 +105,7 @@
   color: gray;
   background-color: white;
   font-weight: bold;
+  z-index: 1;
 }
 
 .line{
@@ -155,19 +118,29 @@
   left: 0;
   right: 0;
   margin: auto;
-  z-index: -1;
+  
+}
+
+.wrapper form h1{
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 24px;
 }
 
 .loginButton{
-  width: 150px;
+  width: 200px;
   padding: 15px 25px;
   border-radius: 5px;
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   font-weight: bold;
   margin-bottom: 20px;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .google{
@@ -187,13 +160,13 @@
 }
 
 .leftInput{
-  width: 150px;
+  width: 100%;
   padding: 15px 20px;
   margin-bottom: 20px;
 }
 
 .rightInput{
-  width: 200x;
+ width: 100%;
   padding: 15px 20px;
   margin-bottom: 20px;
 }
@@ -206,11 +179,15 @@
   border: none;
   padding: 15px 20px;
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
 
+
 .loginTitle{
-  position: absolute;
-  top: 150px;
+ 
   color:lightgray
 }
 

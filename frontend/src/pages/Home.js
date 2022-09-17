@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import Background from "../assets/Background.png";
 
 const Home = () => {
