@@ -25,7 +25,7 @@ const Login = ({ setUser }) => {
         console.log(res);
 
         setUser(res.data);
-        navigate("/workouts/home");
+        navigate("/workouts");
       })
       .catch((err) => {
         alert(err.message);
@@ -44,7 +44,7 @@ const Login = ({ setUser }) => {
         console.log(res);
 
         setUser(res.data);
-        navigate("/workouts/home");
+        navigate("/workouts");
       })
       .catch((err) => {
         alert(err.message);
@@ -61,6 +61,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="bg-[#F4F4F4]">
+      
       <div className="login">
         <div className="wrapper">
           <div className="left">

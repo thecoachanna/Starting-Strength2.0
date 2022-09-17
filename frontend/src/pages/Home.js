@@ -29,7 +29,7 @@ const Home = () => {
             <div class="flex flex-wrap mt-8 text-center gap-4">
               <a
                 class="block w-full px-12 py-3 text-md font-medium text-white rounded shadow bg-[#1CB3B5] sm:w-auto active:bg-[#2B2B46] hover:bg-[#2B2B46] focus:outline-none focus:ring"
-                href="/workouts"
+                href="/login"
               >
                 Let's lift!
               </a>

@@ -4,12 +4,15 @@ const Workout = ({ workouts }) => {
   return (
     <Fragment>
       <div className="py-24">
-        <h1 className="text-center font-[#2B2B46] text-4xl weight-">
+        <h1 className="text-center text-[#2B2B46] text-4xl weight-">
           Starting Strength Workouts
         </h1>
         <br></br>
-        <h1 className="text-center font-[#2B2B46] text-2xl">
-          For true beginners to strength training.
+        <h1 className="text-center text-[#2B2B46] text-2xl">
+          Below you'll find 6 weeks of progressive strength training workouts. <strong className="text-[#1CB3B5]">Designed for true beginners.</strong>
+        </h1>
+        <h1 className="text-center text-[#2B2B46] text-2xl">
+          Be sure to check out the Training Tips page for commonly asked questions.
         </h1>
       </div>
       <div className="grid lg:grid-cols-3 gap-4 content-center mt-2 mx-auto space-around">
