@@ -36,7 +36,7 @@ const NewWorkout = ({ addWorkout, exercises }) => {
     e.preventDefault();
     console.log(formData);
     axios
-      .post("http://localhost:4000/workouts", {
+      .post("https://starting-strength-backend.herokuapp.com/workouts", {
         // ...formData,
         selectedExercise
       })

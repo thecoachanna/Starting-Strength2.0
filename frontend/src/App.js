@@ -19,13 +19,13 @@ function App() {
 
   
   useEffect(() => {
-    fetch('http://localhost:4000/workouts/')
+    fetch('https://starting-strength-backend.herokuapp.com/workouts/')
     .then( res => res.json())
     .then( exercise => setExercises(exercise))
   }, [])
 
   useEffect(() => {
-    fetch('http://localhost:4000/workouts/')
+    fetch('https://starting-strength-backend.herokuapp.com/workouts/')
     .then( res => res.json())
     .then( exercise => setWorkout(exercise))
   }, [])

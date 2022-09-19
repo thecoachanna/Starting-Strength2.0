@@ -7,7 +7,7 @@ const Navbar = ({ user }) => {
   const handleClick = () => setNav(!nav);
 
   const logout = () => {
-    window.open("http://localhost:4000/auth/logout", "_self");
+    window.open("https://starting-strength-backend.herokuapp.com/auth/logout", "_self");
   };
 
   return (

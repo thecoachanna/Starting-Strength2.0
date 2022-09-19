@@ -17,7 +17,7 @@ const Login = ({ setUser }) => {
     e.preventDefault();
     const fData = new FormData(e.target);
     axios
-      .post("http://localhost:4000/user/login", {
+      .post("https://starting-strength-backend.herokuapp.com/user/login", {
         username: fData.get("username"),
         password: fData.get("password"),
       })
@@ -36,7 +36,7 @@ const Login = ({ setUser }) => {
     e.preventDefault();
     const fData = new FormData(e.target);
     axios
-      .post("http://localhost:4000/user/register", {
+      .post("https://starting-strength-backend.herokuapp.com/user/register", {
         username: fData.get("username"),
         password: fData.get("password"),
       })
@@ -52,11 +52,11 @@ const Login = ({ setUser }) => {
   };
 
   const google = () => {
-    window.open("http://localhost:4000/auth/google", "_self");
+    window.open("https://starting-strength-backend.herokuapp.com/auth/google", "_self");
   };
 
   const github = () => {
-    window.open("http://localhost:4000/auth/github", "_self");
+    window.open("https://starting-strength-backend.herokuapp.com/auth/github", "_self");
   };
 
   return (
