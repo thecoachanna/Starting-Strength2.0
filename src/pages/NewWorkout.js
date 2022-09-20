@@ -34,30 +34,34 @@ const NewWorkout = ({ addWorkout, exercises }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log(formData, selectedExercise);
     axios
       .post("https://starting-strength-backend.herokuapp.com/workouts", {
-        // ...formData,
+        ...formData,
         selectedExercise
       })
       .then((res) => {
         setFormData(res.data);
+
         navigate('/workouts', { replace: true })
       });
   };
 
     const handleSelectedExercise = (e, num) => {
-      if (selectedExercise.includes(e)) {
+      // if (selectedExercise.every(exercise => exercise.exercise !== e.exercise)) {
 
-     
-        let data = selectedExercise.filter((exercise, index) => {
+      //    setSelectedExercise([...selectedExercise, e]);
+        
+      //     return
+      // }
+      // let data = selectedExercise.filter((exercise, index) => {
             
-            return exercise !== e;
-          });
-          setSelectedExercise(data)
-          return
-      }
-    setSelectedExercise([...selectedExercise, e]);
+      //   return exercise !== e;
+      // });
+      let copy = [...selectedExercise]
+      copy[num] = e
+      setSelectedExercise(copy)
+
   };
 
   let exerciseNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -83,7 +87,7 @@ const NewWorkout = ({ addWorkout, exercises }) => {
                 <Select
                   id={`exercise${num}`}
                   defaultValue={selectedExercise}
-                  onChange={handleSelectedExercise}
+                  onChange={e => handleSelectedExercise(e, num)}
                   options={exercises.map((exercise) => {
                     return {
                       exercise: exercise._id,
