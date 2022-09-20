@@ -21,7 +21,7 @@ const Workout = ({ workouts }) => {
             <div className="w-full rounded-lg shadow-md lg:max-w-sm bg-white ">
               <div key={workout.id}>
                 <span>{workout?.number}</span>
-                {workout.exercises.map((exercise) => {
+                {workout?.exercises?.map((exercise) => {
                   return (
                     <div key={exercise.id}>
                       <iframe

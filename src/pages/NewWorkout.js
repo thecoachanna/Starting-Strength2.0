@@ -47,13 +47,16 @@ const NewWorkout = ({ addWorkout, exercises }) => {
   };
 
     const handleSelectedExercise = (e, num) => {
-        let data = selectedExercise.map((exercise, index) => {
-            if (num === index) {
-              
-              return e
-            }
-            return exercise;
+      if (selectedExercise.includes(e)) {
+
+     
+        let data = selectedExercise.filter((exercise, index) => {
+            
+            return exercise !== e;
           });
+          setSelectedExercise(data)
+          return
+      }
     setSelectedExercise([...selectedExercise, e]);
   };
 
