@@ -7,7 +7,7 @@ const Workouts = ({ exercises }) => {
   const [workout, setWorkout] = useState([]);
 
   useEffect(() => {
-    fetch("https://starting-strength-backend.herokuapp.com/workouts/home")
+    fetch("https://starting-strength-backend.herokuapp.com/workouts")
       .then((res) => res.json())
       .then((exercise) => setWorkout(exercise));
   }, []);
