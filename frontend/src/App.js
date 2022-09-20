@@ -9,7 +9,6 @@ import Login from "./pages/Login";
 import Navbar from './components/Navbar';
 import TrainingTips from "./pages/TrainingTips";
 import NewWorkout from './pages/NewWorkout';
-import Workout from './components/Workout'
 import Workouts from './pages/Workouts'
 
 function App() {
