@@ -4,6 +4,12 @@ Beginner friendly and body diverse workout app. MERN Stack.
 # Your project idea
 Build a workout app for people who are new to strength training and the gym. Users can work through 8 weeks of workouts, including video demos of exercises and technique tips. As well as read through Training Tips section for explanations of equipment, terminology and other FAQs.
 
+# Live Site
+https://starting-strength-frontend.herokuapp.com/workouts/home
+
+# Screenshot
+<img width="1512" alt="Screenshot 2023-01-12 at 6 49 59 PM" src="https://user-images.githubusercontent.com/99093454/212214952-6104171b-6f19-4bd7-8c57-518141d5b564.png">
+
 # MVP
 - Full CRUD for User Profile
 - Admin only functionality for workouts
